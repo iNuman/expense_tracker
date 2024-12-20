@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
             TotalExpensesWidget(),
             SizedBox(height: 14),
             ExpenseFilterWidget(),
+            SizedBox(height: 14),
 
           ],
         ),
