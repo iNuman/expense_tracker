@@ -19,4 +19,42 @@ class Expense extends Equatable {
         date,
         category,
       ];
+
+  factory Expense.fromJson(Map<String, dynamic> json) {
+    return Expense(
+      id: json['id'],
+      title: json['title'],
+      amount: double.tryParse(json['amount']) ?? 0.0,
+      date: DateTime.fromMillisecondsSinceEpoch(json['date']),
+      category: Category.fromJson(json['category']),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'amount': amount.toString(),
+      'date': date.millisecondsSinceEpoch,
+      'category': category.toJson(),
+    };
+  }
+
+  Expense copyWith({
+    String? title,
+    double? amount,
+    DateTime? date,
+    Category? category,
+  }) {
+    return Expense(
+      id: id,
+      title: title ?? this.title,
+      amount: amount ?? this.amount,
+      date: date ?? this.date,
+      category: category ?? this.category,
+    );
+  }
+
+  @override
+  bool get stringify => true;
 }
