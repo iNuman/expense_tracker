@@ -43,9 +43,9 @@ class LocalDataStorage {
 
   Stream<List<Expense?>> getExpenses() => _controller.asBroadcastStream();
 
-  Future<void> deleteExpense(Expense expense) async {
+  Future<void> deleteExpense(String id) async {
     final expenses = [..._controller.value];
-    final expenseIndex = expenses.indexWhere((currentExpense) => currentExpense?.id == expense.id);
+    final expenseIndex = expenses.indexWhere((currentExpense) => currentExpense?.id == id);
     if (expenseIndex == -1) {
       throw Exception("No record found.");
     } else {
