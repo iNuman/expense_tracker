@@ -14,6 +14,8 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TotalExpensesWidget(),
+            SizedBox(height: 14),
+
           ],
         ),
       ),
