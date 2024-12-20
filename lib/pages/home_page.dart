@@ -1,4 +1,5 @@
 import 'package:expense_tracker/extensions/extensions.dart';
+import 'package:expense_tracker/widgets/total_expense_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-
+            TotalExpensesWidget(),
           ],
         ),
       ),
