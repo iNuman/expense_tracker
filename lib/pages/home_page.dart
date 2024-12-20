@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Hello, Good Morning')),
+      appBar: AppBar(title: const Text('Hi, Good Evening')),
       body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
