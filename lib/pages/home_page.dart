@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           children: [
             TotalExpensesWidget(),
             SizedBox(height: 14),
-            ExpenseFilterWidget(),
+            // ExpenseFilterWidget(),
             SizedBox(height: 14),
             ExpensesWidget(),
           ],
