@@ -1,22 +1,24 @@
+import 'package:expense_tracker/repositories/expense_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final ExpenseRepository expenseRepository;
+  const MyApp({super.key, required this.expenseRepository});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Expense Tracker',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: true,
-      ),
-      home: const Column(
-        children: [
-          Text("Hello World")
-        ],
+    return RepositoryProvider.value(
+      value: expenseRepository,
+      child: BlocProvider(
+        create: (context) => ExpenseListBloc(
+          repository: expenseRepository,
+        )..add(const ExpenseListSubscriptionRequested()),
+        child: MaterialApp(
+          home: const HomePage(),
+          theme: AppTheme.theme,
+          debugShowCheckedModeBanner: false,
+        ),
       ),
     );
   }
