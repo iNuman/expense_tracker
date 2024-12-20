@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:expense_tracker/models/Expense.dart';
+import 'package:expense_tracker/models/expense.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
