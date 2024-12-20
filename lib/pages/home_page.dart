@@ -1,3 +1,4 @@
+import 'package:expense_tracker/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,11 +16,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){}, child: const Icon(Icons.add)),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: context.showAddExpenseSheet,
-      //   child: const Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: context.showAddExpenseSheet,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
