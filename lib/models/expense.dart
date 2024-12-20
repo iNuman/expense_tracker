@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
-import 'package:expense_tracker/models/Category.dart';
+import 'package:expense_tracker/models/category.dart';
 
 class Expense extends Equatable {
   final String id;
   final String title;
   final double amount;
   final DateTime date;
-  final Category category;
+  final Categories category;
 
   const Expense(
       {required this.id, required this.title, required this.amount, required this.date, required this.category});
@@ -26,7 +26,7 @@ class Expense extends Equatable {
       title: json['title'],
       amount: double.tryParse(json['amount']) ?? 0.0,
       date: DateTime.fromMillisecondsSinceEpoch(json['date']),
-      category: Category.fromJson(json['category']),
+      category: Categories.fromJson(json['category']),
     );
   }
 
@@ -44,7 +44,7 @@ class Expense extends Equatable {
     String? title,
     double? amount,
     DateTime? date,
-    Category? category,
+    Categories? category,
   }) {
     return Expense(
       id: id,

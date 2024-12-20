@@ -1,5 +1,5 @@
 import 'package:expense_tracker/data/LocalDataStorage.dart';
-import 'package:expense_tracker/models/Expense.dart';
+import 'package:expense_tracker/models/expense.dart';
 
 class ExpenseRepository {
   final LocalDataStorage _storage;
@@ -12,5 +12,5 @@ class ExpenseRepository {
 
   Future<void> deleteExpense(String id) => _storage.deleteExpense(id);
 
-  Stream<List<Expense?>> getAllExpenses() => _storage.getExpenses()
+  Stream<List<Expense?>> getAllExpenses() => _storage.getExpenses();
 }
